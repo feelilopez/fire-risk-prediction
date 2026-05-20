@@ -1,2 +1,8 @@
 # venv
 .venv
+test.ipynb
+# ignore all files inside _static folders
+/data/baseline/test/_static/*
+/data/baseline/val/_static/*
+/data/baseline/train/_static/*
+/data/old-sampling
