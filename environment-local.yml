@@ -1,0 +1,26 @@
+name: fire-risk-local
+# Lightweight environment for local work: EDA, data cleaning, notebooks, plotting.
+# No GPU stack, no torch, no xgboost — those live on the cluster.
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+
+  # Data wrangling
+  - pandas=2.2.*
+  - numpy=1.26.*
+  - pyarrow=17.*
+  - fastparquet
+  - scikit-learn=1.5.*   # OneHotEncoder, StandardScaler used by src/clean.py
+  - joblib               # meta.joblib persistence
+
+  # IberFire raw-cube access (only needed if you re-run sampling or EDA)
+  - xarray
+  - netcdf4
+  - dask
+
+  # Notebooks + plotting
+  - jupyterlab
+  - ipykernel
+  - matplotlib
+  - seaborn

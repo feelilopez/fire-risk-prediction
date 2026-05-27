@@ -1,0 +1,32 @@
+name: fire-risk
+# Cluster environment for GPU training on H100 (CUDA 12.x).
+# Keep this minimal — anything you only do locally (notebooks, EDA, plotting)
+# belongs in environment-local.yml, not here.
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.11
+
+  # GPU stack (H100 / CUDA 12.1)
+  - pytorch=2.4.*
+  - pytorch-cuda=12.1
+  - torchvision=0.19.*
+
+  # Classical ML (GPU-enabled XGBoost)
+  - py-xgboost-gpu=2.1.*
+  - scikit-learn=1.5.*
+
+  # Data
+  - pandas=2.2.*
+  - numpy=1.26.*
+  - pyarrow=17.*
+  - joblib
+
+  # Experiment tracking (works offline; sync from login node)
+  - wandb
+
+  # Utilities
+  - tqdm
+  - pyyaml
