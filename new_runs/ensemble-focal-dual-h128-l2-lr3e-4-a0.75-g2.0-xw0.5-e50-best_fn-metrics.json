@@ -1,0 +1,40 @@
+{
+  "val": {
+    "pr_auc": 0.8376599672348637,
+    "roc_auc": 0.9642270540953496,
+    "threshold": 0.34251171350479126,
+    "f2": 0.778933305391104,
+    "recall": 0.8620089868096825,
+    "precision": 0.5622045755341274,
+    "tp": 5947,
+    "fp": 4631,
+    "fn": 952,
+    "tn": 64333,
+    "fn_rate": 0.13799101319031742,
+    "best_fbeta_on_sweep": 0.7789333053911038,
+    "best_threshold_on_sweep": 0.34251171350479126
+  },
+  "test": {
+    "pr_auc": 0.7267453456629852,
+    "roc_auc": 0.948084935807744,
+    "threshold": 0.34251171350479126,
+    "f2": 0.6781976744186047,
+    "recall": 0.7014431749849669,
+    "precision": 0.5988193018480493,
+    "tp": 2333,
+    "fp": 1563,
+    "fn": 993,
+    "tn": 31690,
+    "fn_rate": 0.29855682501503306,
+    "best_fbeta_on_sweep": 0.7123470067086598,
+    "best_threshold_on_sweep": 0.24020671844482422
+  },
+  "operating_threshold": 0.34251171350479126,
+  "selection_meta": {
+    "epoch": 13,
+    "criterion": "min ensemble val FN at F2-optimal threshold",
+    "val_fn_at_pick": 952,
+    "threshold_at_pick": 0.34251171350479126
+  },
+  "xgb_weight": 0.5
+}

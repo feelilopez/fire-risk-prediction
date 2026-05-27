@@ -1,0 +1,39 @@
+{
+  "val": {
+    "pr_auc": 0.737182259994149,
+    "roc_auc": 0.9545770445056763,
+    "threshold": 0.15865257382392883,
+    "f2": 0.7573323131854118,
+    "recall": 0.8608493984635455,
+    "precision": 0.5113655932495265,
+    "tp": 5939,
+    "fp": 5675,
+    "fn": 960,
+    "tn": 63289,
+    "fn_rate": 0.13915060153645456,
+    "best_fbeta_on_sweep": 0.7573323131854118,
+    "best_threshold_on_sweep": 0.15865257382392883
+  },
+  "test": {
+    "pr_auc": 0.6183095957783293,
+    "roc_auc": 0.9224947291342549,
+    "threshold": 0.15865257382392883,
+    "f2": 0.6126312166580623,
+    "recall": 0.6422128683102826,
+    "precision": 0.5173165415354808,
+    "tp": 2136,
+    "fp": 1993,
+    "fn": 1190,
+    "tn": 31260,
+    "fn_rate": 0.3577871316897174,
+    "best_fbeta_on_sweep": 0.6548794942710392,
+    "best_threshold_on_sweep": 0.03003706783056259
+  },
+  "operating_threshold": 0.15865257382392883,
+  "selection_meta": {
+    "epoch": 5,
+    "criterion": "min val FN at F2-optimal threshold",
+    "val_fn_at_pick": 960,
+    "threshold_at_pick": 0.15865257382392883
+  }
+}
