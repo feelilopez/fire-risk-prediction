@@ -4,7 +4,7 @@ This repository implements a machine learning and deep learning pipeline to pred
 
 The project addresses the extreme class imbalance of fire events (~0.002% of observations) using spatial and temporal hard negatives, and evaluates models using recall-focused metrics like PR-AUC score to minimize missed fire events (false negatives).
 
-For details on the project methodology, models, and results, please refer to [report.md](report.md).
+For details on the project methodology, models, and results, please refer to [project_report.pdf](project_report.pdf).
 
 ---
 
