@@ -13,10 +13,10 @@ For details on the project methodology, models, and results, please refer to [pr
 ```text
 ├── 1-EDA.ipynb                 # Exploratory Data Analysis
 ├── 2-sampling.ipynb            # Train (1:3 balanced), val, and test (1:10) sampling
-├── report.md                   # Detailed project report
+├── project_report.md           # Detailed project report
+├── project_presentation.md     # Project presentation slides
 ├── results/                    # Obtained evaluation metrics and plots
 ├── run_pipeline_local.sh       # Local verification pipeline (runs on CPU)
-
 ├── requirements.txt            # Python package dependencies (pip setup)
 ├── environment-local.yml       # Local Conda environment definition (CPU-only)
 ├── environment-cluster.yml     # Cluster Conda environment definition (GPU / CUDA 12.1)
