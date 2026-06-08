@@ -26,6 +26,7 @@ DROP_ALWAYS = [
     "label",                                 # duplicate of is_fire (target)
     "x_coordinate", "y_coordinate",          # redundant with x, y
     "x_index", "y_index",                    # redundant with x, y (grid indices)
+    "FWI",                                   # dropped weather feature
 ]
 
 # Identifier columns: written to output for analysis but not used as features.
@@ -204,18 +205,11 @@ def _ffill_window(df: pd.DataFrame) -> pd.DataFrame:
     # ascending, day_offset descending.
     df = df.sort_values(["sample_id", "day_offset"], ascending=[True, False])
 
-    # `groupby(...).transform(f)` applies f to each group and returns a
-    # DataFrame the SAME SHAPE as the input (unlike .apply which can
-    # reduce). For each sample's 7-row window:
-    #   g.ffill()  carries the last known value forward in time
-    #   g.bfill()  then mops up any leading nulls (if oldest days are also
-    #              missing, use the first observation we *do* have)
-    # `sort=False` keeps groups in their existing order — faster, and the
-    # output order doesn't matter since we already sorted the whole frame.
-    df[num_cols] = (
-        df.groupby("sample_id", sort=False)[num_cols]
-        .transform(lambda g: g.ffill().bfill())
-    )
+    # Use native GroupBy methods ffill and bfill (much faster than Python lambda transform).
+    # Since they return DataFrames with the original index, direct assignment works.
+    g = df.groupby("sample_id", sort=False)[num_cols]
+    df[num_cols] = g.ffill()
+    df[num_cols] = g.bfill()
     return df
 
 

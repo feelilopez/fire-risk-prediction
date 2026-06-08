@@ -2,23 +2,20 @@
 .venv
 envs/
 test.ipynb
-# ignore all files inside _static folders
-/data/baseline/test/_static/*
-/data/baseline/val/_static/*
-/data/baseline/train/_static/*
-/data/old-sampling
+# Ignore all data directories (to be generated via notebooks)
+data/
 
-# Python
-__pycache__/
-*.py[cod]
-*.egg-info/
-
-# Cleaned data + run artifacts
-data/baseline/clean/
-data/lstm/clean/
 runs/
+new_runs/
 logs/
 wandb/
 
 # Jupyter
 .ipynb_checkpoints/
+
+# Python compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+

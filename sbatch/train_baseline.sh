@@ -9,7 +9,8 @@
 module load conda
 source activate fire-risk
 
-cd /home/mfsvensson/TFG_reps/fire-risk-prediction
+# Navigate to the project root directory
+cd "${SLURM_SUBMIT_DIR:-.}"
 
 set -euo pipefail
 
